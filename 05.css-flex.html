@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    .container {
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
+    <style>
+            .container {
+        display: flex; /* 启用Flex布局 */
+        justify-content: space-between; /* 子项目之间间隔相等 */
+        align-items: center; /* 子项目在垂直方向上居中对齐 */
+        width: 100%; /* 容器宽度 */
+        height: 200px; /* 容器高度 */
+        border: 1px solid #000; /* 容器边框，方便查看布局效果 */
       }
       
       .item {
-        flex-basis: 100px;
-        flex-grow: 1; 
-        flex-shrink: 1;
+        padding: 10px; /* 内边距 */
+        background-color: #f0f0f0; /* 背景颜色 */
+        border: 1px solid #ccc; /* 边框 */
+        flex-basis: 100px; /* 基础宽度 */
       }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Flex Layout Practice</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
       <div class="container">
         <div class="item">Item 1</div>
         <div class="item">Item 2</div>
         <div class="item">Item 3</div>
       </div>
+    </body>
+    </html>
+
 </body>
 </html>
