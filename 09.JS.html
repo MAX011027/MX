@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫人物属性生成器</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#generateButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#characterInfo p {
+    margin: 10px 0;
+}
+    </style>
+</head>
+<body>
+    <h1>动漫人物属性生成器</h1>
+    <button id="generateButton">生成属性</button>
+    <div id="characterInfo">
+        <p>性别: <span id="gender"></span></p>
+        <p>武器: <span id="weapon"></span></p>
+        <p>性格: <span id="personality"></span></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var generateButton = document.getElementById('generateButton');
+    var genderElement = document.getElementById('gender');
+    var weaponElement = document.getElementById('weapon');
+    var personalityElement = document.getElementById('personality');
+
+    // 定义一个函数来生成随机属性
+    function generateCharacterAttributes() {
+        var genders = ['男', '女', '未知'];
+        var weapons = ['剑', '魔法棒', '弓箭', '拳套'];
+        var personalities = ['勇敢', '机智', '冷静', '热情', '神秘'];
+
+        genderElement.textContent = getRandomItem(genders);
+        weaponElement.textContent = getRandomItem(weapons);
+        personalityElement.textContent = getRandomItem(personalities);
+    }
+
+    // 辅助函数，用于从数组中随机选择一个元素
+    function getRandomItem(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    // 给按钮添加点击事件监听器
+    generateButton.addEventListener('click', generateCharacterAttributes);
+}); 
+    </script>
+</body>
+</html>
