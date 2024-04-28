@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《甄嬛传》妃子生成器</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; }
+        #feiziInfo { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>《甄嬛传》妃子生成器</h1>
+    <button id="createFeizi">创建妃子</button>
+    <div id="feiziInfo">
+        <p>名字: <span id="name"></span></p>
+        <p>位分: <span id="rank"></span></p>
+        <p>才艺: <span id="talent"></span></p>
+    </div>
+
+    <script>
+        // 定义妃子类
+        class FeiZi {
+            constructor(name, rank, talent) {
+                this.name = name;
+                this.rank = rank;
+                this.talent = talent;
+            }
+
+            greet() {
+                return `嫔妾${this.name}向皇上请安。`;
+            }
+
+            embroider() {
+                return `${this.name}正在绣花。`;
+            }
+        }
+
+        // 创建妃子对象的函数
+        function createFeizi() {
+            // 随机生成妃子的名字、位分和才艺
+            const names = ['甄嬛', '华妃', '沈眉庄', '安陵容'];
+            const ranks = ['常在', '贵人', '嫔', '妃'];
+            const talents = ['唱歌', '跳舞', '绣花', '弹琴'];
+
+            const feizi = new FeiZi(
+                names[Math.floor(Math.random() * names.length)],
+                ranks[Math.floor(Math.random() * ranks.length)],
+                talents[Math.floor(Math.random() * talents.length)]
+            );
+
+            // 显示妃子信息
+            document.getElementById('name').textContent = feizi.name;
+            document.getElementById('rank').textContent = feizi.rank;
+            document.getElementById('talent').textContent = feizi.talent;
+        }
+
+        // 给按钮添加点击事件
+        document.getElementById('createFeizi').addEventListener('click', createFeizi);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
